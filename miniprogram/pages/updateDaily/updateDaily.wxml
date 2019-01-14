@@ -1,0 +1,8 @@
+<!--miniprogram/pages/test/test.wxml-->
+<text>内容</text>
+<view class="content">
+  <input placeholder="输入内容" type='text' id='content' value="{{content}}" focus="{{focus}}" bindblur='getContent' />
+</view>
+
+<button bindtap="update">提交!</button>
+

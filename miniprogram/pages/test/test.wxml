@@ -1,0 +1,12 @@
+<!--miniprogram/pages/test/test.wxml-->
+<text>计算加法</text>
+<view class="one">
+  <input placeholder="输入第一个数" type='number' id='one' focus="{{focus}}" bindblur='getOne' />
+</view>
+
+<view class="two">
+  <input placeholder="输入第二个数" type='number' id='two' focus="{{focus}}" bindblur='getTwo' />
+</view>
+
+<view>结果是: {{sum}}</view>
+<button bindtap="test">Click me!</button>

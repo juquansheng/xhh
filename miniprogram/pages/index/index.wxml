@@ -40,4 +40,12 @@
     </navigator>
   </view>
 
+<!-- 跳转测试页面 -->
+  <view class="uploader">
+    <navigator url="../test/test" open-type="navigate" class="uploader-text">
+      <text>跳转测试页面</text>
+    </navigator>
+  </view>
+
+
 </view>

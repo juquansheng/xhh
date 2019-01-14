@@ -117,4 +117,9 @@ Page({
     })
   },
 
+  test: function () {
+    url: '../userConsole/userConsole'
+  },
+
+  
 })
