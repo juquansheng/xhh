@@ -1,4 +1,6 @@
 // miniprogram/pages/updateDaily/updateDaily.js
+const app = getApp()  
+
 Page({
 
   /**
@@ -71,21 +73,20 @@ Page({
   },
 
   update: function () {
-  
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'daily',
-      // 传给云函数的参数
-      data: {
-        content: this.data.content
-      },
-      success: res => {
-        console.log('callFunction test result: ', res)
-        this.setData({
-          content: res.result.event.content
-        })
+    console.log('callFunction test result: '+this.data.content)
+    const db = wx.cloud.database()
+    console.log('callFunction test result: ' + db.collection('daily').doc('XDxX74nnuWjcivR9').get({
+      success(res) {
+        // res.data 包含该记录的数据
+        console.log(res.data)
       }
-
+    }))
+    db.collection('daily').doc('XDxX74nnuWjcivR9').update({
+      // data 传入需要局部更新的数据
+      data: {
+        content: 'this.data.content',
+        updateTime: db.serverDate()
+      }
     })
   },
 
